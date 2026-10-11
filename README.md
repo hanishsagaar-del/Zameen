@@ -1,44 +1,22 @@
 # ZAMEEN
 
-A complete two-chapter fashion website built directly in Next.js 16 App Router, TypeScript, Tailwind CSS and Framer Motion.
+Contemporary statement-jacket storefront with two chapters: Lucknow goldwork and Rio de Janeiro architectural line-work.
 
-## Run or build
+## Develop and build
 
-Requires Node.js 20.9 or newer.
-
-```
+```sh
 npm ci
 npm run dev
+npm run build:site
+npm run test:payments
 ```
 
-Open http://localhost:3000. To create the production website:
+Next.js 16 App Router, TypeScript, Tailwind CSS, Framer Motion and local fonts. The Next export is the storefront; the server Worker adds real Razorpay Orders/verification/webhook endpoints and D1 order persistence. `npm run build` and `npm run build:site` build the storefront and bundle the payment backend. Sites deployment packages `dist/` with the existing project identity.
 
-```
-npm run build
-```
+Golden Procession Jacket and One Culture Jacket each cost ₹3,500. `lib/products.ts` is the typed catalog used by both the storefront and server. Eight supplied front/back/side images are integrated; web-optimized WebP copies retain detail and full-size original PNGs are preserved. Gallery transitions, staggered text/masked scroll reveals and abstract thread drafting graphics respect reduced motion.
 
-The `out/` folder is a complete static export and can be served by Vercel, Cloudflare Pages, Netlify, or any static web host. No database, Replit subscription, or backend is required.
+Cart quantities and selected sizes persist in localStorage. Checkout collects an India delivery address, uses Razorpay Standard Checkout, confirms captured payments server-side, and records the order. Secrets stay on the server. The checkout cannot take payments until the merchant's keys and enable setting are configured.
 
-## Included
+See `RAZORPAY-SETUP.md` for secure activation, current limitations and test/live steps. See `DOMAIN-SETUP.md` for exact GoDaddy DNS records. Hosting publication succeeded with public access on 11 October 2026 at https://zameen.hanishsagarm.chatgpt.site. The custom domain is attached but pending verification.
 
-- Home with mask-based cinematic hero, chapters, philosophy, interactive process, and story links.
-- `/collections/india/`, `/collections/brazil/`.
-- `/products/golden-procession/`, `/products/rio-art-deco/`.
-- `/stories/golden-procession/`, `/stories/rio-art-deco/`.
-- Galleries that prioritize back artwork, size selection, cultural source panels, and design credit badges.
-- Size-specific cart with quantity controls, removal, localStorage validation/persistence, accessible native modal, and demo checkout.
-- Responsive layouts, keyboard navigation, reduced-motion support, page metadata, 404/error states, locally hosted fonts.
-
-## Content and assets
-
-Edit `lib/products.ts` to update indicative prices, sizes, product names, and cultural stories. The supplied jacket reference images live in `public/images/products/`. The Rio jacket uses crest-free back/detail viewport crops; its football crest is not shown in the interface. All imagery is presented as design references. Abstract SVG studies are intentionally labeled and contain replacement comments for future editorial photography.
-
-The historical zardozi technique is a source reference, not a verified manufacturing specification. The Rio reference has light thread, while tonal matte-on-black is described as an intended adaptation. Research/consultation/collaboration/attribution steps are principles, not claims of actual partnerships.
-
-## Demo limits
-
-Indicative prices: Golden Procession ₹18,900 and Rio Art Deco ₹17,900. Size options are for the preview. No payment is taken, no real order is placed, and no personal/payment information is collected. Final materials, fit measurements, availability and shipping policy must be confirmed before selling.
-
-## Licensing
-
-User-provided brand and garment references remain with their respective owners. Space Grotesk, Fraunces, and Archivo Black are bundled through Fontsource; their licenses are retained in the dependency packages. No fabricated customer quotes, artisan partnerships or endorsements are included.
+Cultural attribution distinguishes a source tradition from this house's contemporary interpretation. The supplied Rio garment includes mixed architectural references; it is not presented as a literal Rio skyline. Source traditions remain credited to their communities and creators. No artisan partnership or verified construction specification is asserted.

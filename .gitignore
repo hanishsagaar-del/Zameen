@@ -3,3 +3,7 @@ node_modules/
 out/
 .vercel/
 *.tsbuildinfo
+dist/
+.env
+.env.local
+.dev.vars
